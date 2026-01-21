@@ -1,4 +1,4 @@
- WeAct Studio RA4M1 → 41 GPIO + 17 ADC 14 bits 100% compatible avec arduino ide 
+ WeAct Studio RA4M1 → 41 GPIO + 17 ADC 100% compatible avec arduino ide 
 
 Bonjour à tous !
 
