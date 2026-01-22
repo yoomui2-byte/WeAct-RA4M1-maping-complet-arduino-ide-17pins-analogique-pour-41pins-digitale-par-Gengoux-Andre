@@ -1,8 +1,7 @@
 # WeAct RA4M1 – Mapping complet 100 % compatible Arduino IDE  
 **41 broches digitales (D0–D40) + 17 entrées analogiques (A0–A16)**
 
-![WeAct RA4M1 Board](https://github.com/yoomui2-byte/WeAct-RA4M1-maping-complet-arduino-ide-17pins-analogique-pour-41pins-digitale-par-Gengoux-Andre/blob/main/weactstudio%20ra4m1%20arduino%20ide%20pinout.PNG)
-
+![WeAct RA4M1 Pinout Arduino IDE](https://github.com/yoomui2-byte/WeAct-RA4M1-maping-complet-arduino-ide-17pins-analogique-pour-41pins-digitale-par-Gengoux-Andre/raw/main/weactstudio%20ra4m1%20arduino%20ide%20pinout.PNG)
 ## Description
 Cette variante exploite **toutes** les broches disponibles sur la WeAct Studio RA4M1 (basée sur Renesas R7FA4M1AB3CFM), identique au MCU de l'Arduino UNO R4 Minima.  
 Elle étend le mapping standard limité de l'UNO R4 pour offrir :
