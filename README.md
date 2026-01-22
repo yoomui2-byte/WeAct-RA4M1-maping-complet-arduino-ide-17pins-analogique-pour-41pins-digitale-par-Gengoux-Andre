@@ -1,37 +1,59 @@
- WeActStudio RA4M1 → 41 GPIO + 17 ADC maping complet a 100% , compatible avec arduino ide.
+# WeAct RA4M1 – Mapping complet 100 % compatible Arduino IDE  
+**41 broches digitales (D0–D40) + 17 entrées analogiques (A0–A16)**
 
-Bonjour à tous !
+![WeAct RA4M1 Board](https://github.com/yoomui2-byte/.../raw/main/images/weact_ra4m1.jpg)
 
-Après des semaines de travail avec l’aide de Grok (xAI) pour la compréhension du code , voici la première version qui exploite VRAIMENT tout le potentiel de la WeAct RA4M1 sous Arduino IDE :
+## Description
+Cette variante exploite **toutes** les broches disponibles sur la WeAct Studio RA4M1 (basée sur Renesas R7FA4M1AB3CFM), identique au MCU de l'Arduino UNO R4 Minima.  
+Elle étend le mapping standard limité de l'UNO R4 pour offrir :
+- 41 broches digitales utilisables
+- 17 canaux ADC (analogRead)
 
-- 41 broches digitales (D0 à D40)
-- 17 entrées analogiques (A0 à A16):
-- A0=p500 ,
-- A1=p501 ,
-- A2=p502 ,
-- A3=p015 ,
-- A4=p014 ,
-- A5=p013 ,
-- A6=p012 ,
-- A7=p011 ,
-- A8=p004 ,
-- A9=p003 ,
-- A10=P002 ,
-- A11=p001 ,
-- A12=p000 ,
-- A13=p100 ,
-- A14=p101 ,
-- A15=p102 ,
-- A16=p103.
-- Attention!!! pour profité de la pin A6=p012 vous devez désoudé la jolie led bleu et où la résistance juste a côté , je conseille de retiré uniquement la led cela suffit (risque de retiré bien plus si vous tentez la résistance laissé la elle ne fait pas de mal )
-- pourquoi retiré la led bleu ? elle est montée en série avec une résistance qui a leurs tour son montée en parallèle sur la pin p012 ce qui provoquera une movaise lecture de la pin 012 
-- copier coller pins_arduino.h et variant.cpp dans C:\Users\Yourname\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.5.1\variants\MINIMA.
-- ou bien créé un nouveau variant (je le ferai bientôt)
-- bien entendu vous devez avoir flasher votre carte WeactStudio ra4m1 avec le firmware arduino uno r4 au préalable.
+## Fonctionnalités principales
+- **Digital** : D0 à D40
+- **Analog** : A0 à A16, :
+  | Canal | Port Renesas |
+  |-------|--------------|
+  | A0    | P500        |
+  | A1    | P501        |
+  | A2    | P502        |
+  | A3    | P015        |
+  | A4    | P014        |
+  | A5    | P013        |
+  | A6    | P012        |
+  | A7    | P011        |
+  | A8    | P004        |
+  | A9    | P003        |
+  | A10   | P002        |
+  | A11   | P001        |
+  | A12   | P000        |
+  | A13   | P100        |
+  | A14   | P101        |
+  | A15   | P102        |
+  | A16   | P103        |
 
-Merci à Grok pour l’aide précieuse !
+## Prérequis
+1. Flashez le **bootloader Arduino UNO R4 Minima** sur votre WeAct RA4M1 (via Renesas Flash Programmer ou mode DFU).
+2. Installez le core **Renesas UNO** dans l'IDE Arduino (via Gestionnaire de cartes → arduino:renesas_uno, version recommandée ≥ 1.5.1).
 
-Vos retours sont les bienvenus :
-yoomui@outlook.be pour vos questions
+## Installation (méthode temporaire – sera écrasée par mises à jour uno r4)
+1. Copiez les fichiers `pins_arduino.h` et `variant.cpp` fournis dans :  
+   `C:\Users\<VotreNom>\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\<version>\variants\MINIMA`  
+   (remplacez les fichiers existants).
 
-André Gengoux.
+**Méthode recommandée (bientôt disponible)** : Créer un variant local dans votre sketchbook (`hardware/gengoux/renesas/...`) pour éviter l'écrasement lors des mises à jour du core arduino uno r4 minima.
+
+## Avertissement matériel important
+Pour utiliser **A6 (P012)** correctement en entrée analogique :  
+- **Désoudez la LED bleue et ou la résistance qui va avec**
+  La LED + résistance interfèrent avec les lectures ADC (diviseur de tension parasite).  
+  Retirer seulement la LED suffit ; la résistance est plus compliquée car risque de retiré autre chose a proximité.
+
+## Crédits
+Développé par **Gengoux André** avec l'assistance de Grok (xAI) pour l'analyse et la compréhension du core Renesas.
+
+## Contact & Retours
+Questions, bugs, suggestions : yoomui@outlook.be  
+Discussion dédiée : [Thread Arduino Forum](https://forum.arduino.cc/t/weactstudio-ra4m1-maping-complet-a-100-compatible-arduino-ide-17-pins-analogue-41-pins-digitale-par-gengoux-andre/1426407)
+
+Merci pour vos retours !
