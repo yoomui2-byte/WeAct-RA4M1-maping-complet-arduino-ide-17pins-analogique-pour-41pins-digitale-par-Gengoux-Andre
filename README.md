@@ -44,7 +44,7 @@ Elle étend le mapping standard limité de l'UNO R4 pour offrir :
 
 ## Avertissement matériel important
 Pour utiliser **A6 (P012)** correctement en entrée analogique :  
-- **Désoudez la LED bleue et ou la résistance qui va avec**
+- **Désoudez la LED bleue et ou la résistance qui va avec**,
   La LED + résistance interfèrent avec les lectures ADC (diviseur de tension parasite).  
   Retirer seulement la LED suffit ; la résistance est plus compliquée car risque de retiré autre chose a proximité.
 
